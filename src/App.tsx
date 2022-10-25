@@ -1,13 +1,21 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
+import { useAllSubmissions } from './api/hooks/submission'
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+
+//TODO:
+// Add a search bar
 
 function App() {
   const [count, setCount] = useState(0)
 
+  const { data } = useAllSubmissions();
+
   return (
     <div className="App">
-      <div>
+      {/* <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src="/vite.svg" className="logo" alt="Vite logo" />
         </a>
@@ -26,7 +34,27 @@ function App() {
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
-      </p>
+      </p> */}
+         {data?.map((submission) => (
+           <CardContent sx={{
+             display: 'flex',
+             flexDirection: 'column',
+             alignItems: 'center',
+             justifyContent: 'center',
+             textAlign: 'center',
+             padding: '1rem',
+             margin: '1rem',
+             backgroundColor: 'white',
+             borderRadius: '1rem',
+             boxShadow: '0 0 1rem rgba(0, 0, 0, 0.2)',
+          }}>
+        <div key={submission.id}>
+          <h1>{submission.title}</h1>
+          <p>{submission.selftext}</p>
+          <p>{submission.url}</p>
+          </div>
+          </CardContent>
+      ))}
     </div>
   )
 }
