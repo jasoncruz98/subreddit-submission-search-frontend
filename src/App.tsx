@@ -13,12 +13,16 @@ import { Box } from '@mui/material';
 // [DONE] Add a search bar
 // [DONE] Add data hook to fetch data from https://github.com/pushshift/api
 // [DONE] Make search bar call data hook
-// Add a loading spinner while data is loading
+// [DONE] Add a loading spinner while data is loading
 // [DONE] Debounce search bar
 // Add infinite scroll
 // Add button to save submission to local storage
 // Add button to remove submission from local storage
 // Add App Bar with button to view saved submissions
+// Use React Router to navigate between pages
+
+//Refactor:
+// More data hook abstraction - set URL in .env
 
 export interface RedditPost {
     id: number
