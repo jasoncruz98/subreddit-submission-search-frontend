@@ -7,6 +7,14 @@ import CardContent from '@mui/material/CardContent';
 
 //TODO:
 // Add a search bar
+// Add data hook to fetch data from https://github.com/pushshift/api
+// Make search bar call data hook
+// Add a loading spinner while data is loading
+// Debounce search bar
+// Add infinite scroll
+// Add button to save submission to local storage
+// Add button to remove submission from local storage
+// Add App Bar with button to view saved submissions
 
 function App() {
   const [count, setCount] = useState(0)
